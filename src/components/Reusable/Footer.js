@@ -1,0 +1,13 @@
+import React from 'react'
+
+export default function Footer() {
+    return (
+        <footer>
+            <div className="footer-block">
+                <div className="col-12 pt-2 mx-auto text-center bg-dark text-light">
+                   <h6>The copyright footer &copy; 2019</h6>
+                </div>    
+             </div>   
+        </footer>
+    )
+}
