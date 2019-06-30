@@ -8,46 +8,11 @@ import Infoblock from '../components/Reusable/Infoblock'
 import DualInfoblock from '../components/Reusable/DualInfoblock'
 import CourseCart from '../components/Cart/CourseCart'
 
-const IndexPage = ({data}) => (
+const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <HeroSection
-     img={data.img.childImageSharp.fluid}
-     title="I write Code"
-     subtitle="Easiest way to learn programming"
-     heroclass="hero-background"  
-    />  
-    <Infoblock heading="About us" />
-    <CourseCart courses={data.mycourses} />
-     <DualInfoblock heading="Our team" /> 
+         <DualInfoblock heading="Our team" /> 
   </Layout>
 )
 
-export const query = graphql`
- {
-   img:file(relativePath: {eq:"heromain.png"}) {
-     childImageSharp{
-       fluid{
-         ...GatsbyImageSharpFluid_tracedSVG
-       }
-     }
-   },
-   mycourses:allContentfulCourses{
-     edges{
-       node{
-         id
-         title
-         price
-         category
-         description{
-           description
-         }
-         
-         }
-       }
-     }
-   }
- } 
-`
 
 export default IndexPage
