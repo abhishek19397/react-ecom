@@ -5,14 +5,33 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HeroSection from '../components/Reusable/HeroSection'
 import Infoblock from '../components/Reusable/Infoblock'
-import DualInfoblock from '../components/Reusable/DualInfoblock'
-import CourseCart from '../components/Cart/CourseCart'
+import Contact from '../components/Contact/contact'
 
-const IndexPage = () => (
+const ContactPage = ({data}) => (
   <Layout>
-         <DualInfoblock heading="Our team" /> 
+    <SEO title="Home" />
+    <HeroSection
+     img={data.img.childImageSharp.fluid}
+     title="Contact Us"
+     subtitle=""
+     heroclass="about-background"  
+    />
+    
+    <Infoblock heading="How can we help?" />
+     <Contact /> 
   </Layout>
 )
 
+export const query = graphql`
+ {
+   img:file(relativePath: {eq:"contact.png"}) {
+     childImageSharp{
+       fluid{
+         ...GatsbyImageSharpFluid_tracedSVG
+       }
+     }
+   }
+ } 
+`
 
-export default IndexPage
+export default ContactPage
