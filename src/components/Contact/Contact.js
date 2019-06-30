@@ -7,7 +7,7 @@ export default function Contact() {
         <section className="py-3">
             <Heading title="Contact us" />
             <div className="col-10 col-sm-8 mx-auto">
-                <form action="" method="POST">
+                <form action="https://formspree.io/email@domain.tld" method="POST">
                     <div className="form-group">
                         <input
                         className="form-control" 
@@ -40,6 +40,8 @@ export default function Contact() {
                         id="description"
                         placeholder="Your Message"  />
                     </div>   
+                    <button type="submit" className="btn
+                    btn-outline-info btn-block">Submit</button>
                 </form>
             </div>
         </section>    
